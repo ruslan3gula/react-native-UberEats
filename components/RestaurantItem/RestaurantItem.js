@@ -11,17 +11,22 @@ import {
   Image,
 } from 'react-native';
 
-export const RestaurantItem = () => {
+export const RestaurantItem = ({restaurant}) => {
+  const {name, image, deliveryFee, minDeliveryTime, maxDeliveryTime} =
+    restaurant;
   return (
     <View style={styles.restaurantContainer}>
       <Image
         source={{
-          uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg',
+          // uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg',
+          uri: image,
         }}
         style={styles.image}
       />
-      <Text style={styles.title}>El Cabo Coffe Bar Tres De Mayo</Text>
-      <Text style={styles.subtitle}> $6.90</Text>
+      <Text style={styles.title}>{name}</Text>
+      <Text style={styles.subtitle}>
+        ${deliveryFee} &#8226; {minDeliveryTime}-{maxDeliveryTime}
+      </Text>
     </View>
   );
 };

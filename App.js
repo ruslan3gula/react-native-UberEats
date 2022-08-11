@@ -14,18 +14,18 @@ import {
 import {HeaderButtons} from './components/HeaderButtons';
 import {Search} from './components/Search';
 import {RestaurantItem} from './components/RestaurantItem/RestaurantItem';
+import restaurants from './assets/data/restaurants.json';
+import {FlatList} from 'react-native';
 
 const App = () => {
   return (
-    <SafeAreaView style={{backgroundColor: '#eee', flex: 1}}>
-      <HeaderButtons />
-      <Search />
-      <View style={styles.container}>
-        <View>
-          <RestaurantItem />
-        </View>
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <FlatList
+        data={restaurants}
+        renderItem={({item}) => <RestaurantItem restaurant={item} />}
+      />
+      {/* <RestaurantItem restaurant={restaurants[0]} /> */}
+    </View>
   );
 };
 
