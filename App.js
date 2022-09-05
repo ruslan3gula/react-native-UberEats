@@ -18,13 +18,15 @@ import {FlatList} from 'react-native';
 import {HomeScreen} from './screens/HomeScreen';
 import {RestaurantDetailScreen} from './screens/RestaurantDetailScreen';
 import {DishDetailsScreen} from './screens/DishDetailsScreen';
+import {Basket} from './screens/Basket';
 
 const App = () => {
   return (
     <View style={styles.container}>
       {/* <HomeScreen /> */}
       {/* <RestaurantDetailScreen /> */}
-      <DishDetailsScreen />
+      {/* <DishDetailsScreen /> */}
+      <Basket />
       <StatusBar style="light" />
     </View>
   );

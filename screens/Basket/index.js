@@ -4,7 +4,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import restaurants from '../../assets/data/restaurants.json';
 const dish = restaurants[0].dishes[0];
 
-export const DishDetailsScreen = () => {
+export const Basket = () => {
   const [quantity, setQuantity] = useState(0);
   const onMinus = () => {
     if (quantity > 1) {
@@ -19,7 +19,7 @@ export const DishDetailsScreen = () => {
   };
   return (
     <View style={styles.page}>
-      <Text style={styles.name}>{dish.name}</Text>
+      <Text style={styles.name}> Basket</Text>
       <Text style={styles.description}>{dish.description}</Text>
       <View style={styles.separator} />
       <View style={styles.row}>
